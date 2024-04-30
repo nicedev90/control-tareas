@@ -114,14 +114,15 @@
           btn_form.classList.remove('hidden');
         };
 
+
         let daysLeft = Math.floor(secondsLeft / 86400); 
         let hoursLeft = Math.floor((secondsLeft % 86400) / 3600); 
         let minutesLeft = Math.floor((secondsLeft % 86400) % 3600 / 60); 
 
 
-        let days = daysLeft % 24 < 10 ? `0${daysLeft % 360} : ` : `${daysLeft % 360} : `;
-        let hours = hoursLeft % 24 < 10 ? `0${hoursLeft % 24} : ` :  `${hoursLeft % 24} : `;
-        let minutes = minutesLeft % 60 < 10 ? `0${minutesLeft % 60} : ` : `${minutesLeft % 60} : `;
+        let days = daysLeft % 24 < 10 ? `0${parseInt(daysLeft % 360)} : ` : `${parseInt(daysLeft % 360)} : `;
+        let hours = hoursLeft % 24 < 10 ? `0${parseInt(hoursLeft % 24)} : ` :  `${parseInt(hoursLeft % 24)} : `;
+        let minutes = minutesLeft % 60 < 10 ? `0${parseInt(minutesLeft % 60)} : ` : `${parseInt(minutesLeft % 60)} : `;
         let seconds = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
 
         clock.innerHTML =  hours + minutes + seconds;
@@ -190,14 +191,15 @@
           btn_form.classList.remove('hidden');
         };
 
+
         let daysLeft = Math.floor(secondsLeft / 86400); 
         let hoursLeft = Math.floor((secondsLeft % 86400) / 3600); 
         let minutesLeft = Math.floor((secondsLeft % 86400) % 3600 / 60); 
 
 
-        let days = daysLeft % 24 < 10 ? `0${daysLeft % 360} : ` : `${daysLeft % 360} : `;
-        let hours = hoursLeft % 24 < 10 ? `0${hoursLeft % 24} : ` :  `${hoursLeft % 24} : `;
-        let minutes = minutesLeft % 60 < 10 ? `0${minutesLeft % 60} : ` : `${minutesLeft % 60} : `;
+        let days = daysLeft % 24 < 10 ? `0${parseInt(daysLeft % 360)} : ` : `${parseInt(daysLeft % 360)} : `;
+        let hours = hoursLeft % 24 < 10 ? `0${parseInt(hoursLeft % 24)} : ` :  `${parseInt(hoursLeft % 24)} : `;
+        let minutes = minutesLeft % 60 < 10 ? `0${parseInt(minutesLeft % 60)} : ` : `${parseInt(minutesLeft % 60)} : `;
         let seconds = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
 
         clock.innerHTML =  hours + minutes + seconds;
