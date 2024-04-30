@@ -96,15 +96,15 @@
     if ( asignacion.value && cantidad.value ) {
       time_seconds = parseInt(asignacion.value) * parseInt(cantidad.value);
 
-      console.log(time_seconds)
-
       let now = Date.now();
       let then = now + time_seconds * 1000;
 
       countdown = setInterval(() => {
         secondsLeft = Math.round((then - Date.now()) / 1000);
+        console.log(secondsLeft)
 
-        if(secondsLeft <= 0) {
+        if(secondsLeft < 0) {
+          console.log('menor a 0 ?? ' + secondsLeft)
           clearInterval(countdown);
           return;
         }
@@ -119,11 +119,10 @@
         let hoursLeft = Math.floor((secondsLeft % 86400) / 3600); 
         let minutesLeft = Math.floor((secondsLeft % 86400) % 3600 / 60); 
 
-
-        let days = daysLeft % 24 < 10 ? `0${parseInt(daysLeft % 360)} : ` : `${parseInt(daysLeft % 360)} : `;
-        let hours = hoursLeft % 24 < 10 ? `0${parseInt(hoursLeft % 24)} : ` :  `${parseInt(hoursLeft % 24)} : `;
-        let minutes = minutesLeft % 60 < 10 ? `0${parseInt(minutesLeft % 60)} : ` : `${parseInt(minutesLeft % 60)} : `;
-        let seconds = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
+        let days = daysLeft % 24 < 10 ? `0${Math.floor(daysLeft % 360)} : ` : `${Math.floor(daysLeft % 360)} : `;
+        let hours = hoursLeft % 24 < 10 ? `0${Math.floor(hoursLeft % 24)} : ` :  `${Math.floor(hoursLeft % 24)} : `;
+        let minutes = minutesLeft % 60 < 10 ? `0${Math.floor(minutesLeft % 60)} : ` : `${Math.floor(minutesLeft % 60)} : `;
+        let seconds = secondsLeft % 60 < 10 ? `0${parseInt(Math.floor(secondsLeft % 60))}` : parseInt(Math.floor(secondsLeft % 60));
 
         clock.innerHTML =  hours + minutes + seconds;
         // clock.innerHTML = days + hours + minutes + seconds;
@@ -173,15 +172,16 @@
         btn_form.classList.remove('hidden');
       };
 
-      console.log(time_seconds)
 
       let now = Date.now();
       let then = now + time_seconds * 1000;
 
       countdown = setInterval(() => {
         secondsLeft = Math.round((then - Date.now()) / 1000);
+        console.log(secondsLeft)
 
-        if(secondsLeft <= 0) {
+        if(secondsLeft < 0) {
+          console.log('menor a 0 ?? ' + secondsLeft)
           clearInterval(countdown);
           return;
         }
@@ -191,16 +191,14 @@
           btn_form.classList.remove('hidden');
         };
 
-
         let daysLeft = Math.floor(secondsLeft / 86400); 
         let hoursLeft = Math.floor((secondsLeft % 86400) / 3600); 
         let minutesLeft = Math.floor((secondsLeft % 86400) % 3600 / 60); 
 
-
-        let days = daysLeft % 24 < 10 ? `0${parseInt(daysLeft % 360)} : ` : `${parseInt(daysLeft % 360)} : `;
-        let hours = hoursLeft % 24 < 10 ? `0${parseInt(hoursLeft % 24)} : ` :  `${parseInt(hoursLeft % 24)} : `;
-        let minutes = minutesLeft % 60 < 10 ? `0${parseInt(minutesLeft % 60)} : ` : `${parseInt(minutesLeft % 60)} : `;
-        let seconds = secondsLeft % 60 < 10 ? `0${secondsLeft % 60}` : secondsLeft % 60;
+        let days = daysLeft % 24 < 10 ? `0${Math.floor(daysLeft % 360)} : ` : `${Math.floor(daysLeft % 360)} : `;
+        let hours = hoursLeft % 24 < 10 ? `0${Math.floor(hoursLeft % 24)} : ` :  `${Math.floor(hoursLeft % 24)} : `;
+        let minutes = minutesLeft % 60 < 10 ? `0${Math.floor(minutesLeft % 60)} : ` : `${Math.floor(minutesLeft % 60)} : `;
+        let seconds = secondsLeft % 60 < 10 ? `0${parseInt(Math.floor(secondsLeft % 60))}` : parseInt(Math.floor(secondsLeft % 60));
 
         clock.innerHTML =  hours + minutes + seconds;
         // clock.innerHTML = days + hours + minutes + seconds;
