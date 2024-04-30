@@ -14,10 +14,11 @@
 
   <?php 
 
-      function setTimeRestante($time_seconds) {
 
-      $hours = floor($time_seconds / 3600);
-      $minutes = floor(($time_seconds / 60) % 60);
+    function setTimeRestante($time_seconds) {
+
+      $hours = intval(floor($time_seconds / 3600));
+      $minutes = intval(floor($time_seconds / 60)) % 60;
       $seconds = $time_seconds % 60;
 
       $_hours = $hours % 24 < 10 ? "0" . ($hours % 24) :  ($hours % 24);
@@ -29,8 +30,8 @@
 
     function setTime($time_seconds) {
 
-      $hours = floor($time_seconds / 3600);
-      $minutes = floor(($time_seconds / 60) % 60);
+      $hours = intval(floor($time_seconds / 3600));
+      $minutes = intval(floor($time_seconds / 60)) % 60;
       $seconds = $time_seconds % 60;
 
       $_hours = $hours % 24 < 10 ? "0" . ($hours % 24) :  ($hours % 24);
@@ -64,7 +65,7 @@
 
       } else {
 
-        $html = "<a href='desk_user.php?room_id=". $row->id . "&desk_num=" . $num . "' class='relative hover:bg-blue bg-gray text-blue h-12 w-24  hover:text-white text-center'>";
+        $html = "<a href='desk_user.php?room_id=". $row->id . "&desk_num=" . $num . "' target='_blank' class='relative hover:bg-blue bg-gray text-blue h-12 w-24  hover:text-white text-center'>";
         $html .= "<div class='absolute px-2 left-0 top-0  text-sm bg-blue text-white '>" . $num . "</div>";
         // $html .= setTime($escritorios[$_num]);
         $html .= "</a>";
