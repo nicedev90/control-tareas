@@ -30,9 +30,11 @@ CREATE TABLE rooms (
 CREATE TABLE desks (
   id INT NOT NULL AUTO_INCREMENT,
   room_id INT NOT NULL,
+  usuario_id INT NOT NULL,
   desk_num INT NOT NULL,
   desk_time INT NOT NULL,
   desk_status INT NOT NULL DEFAULT 1,
+  desk_paused INT NOT NULL DEFAULT 0,
   PRIMARY KEY (id),
   CONSTRAINT fk_room_id_desk
   FOREIGN KEY (room_id)

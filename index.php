@@ -11,6 +11,9 @@
     $escritorios[ 'desk_' . $value->desk_num] = $value->desk_time;
   }
 
+  $data['admin'] = false;
+
+
 ?>
 
 <?php require './partials/header.php'; ?>
@@ -37,7 +40,7 @@
   </div>
 
 <script>
-  setInterval(()=> { window.location.href = "index.php"}, 10000)
+  setInterval(()=> { window.location.href = "index.php"}, 5000)
 </script>
 
 <?php require './partials/footer.php'; ?>

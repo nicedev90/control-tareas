@@ -8,6 +8,7 @@ class Database {
     protected const DB_PASS = '';
     protected const DB_NAME = 'dev_classroom';
 
+
     private $stmt;
 
     public function __construct() {

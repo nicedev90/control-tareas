@@ -30,7 +30,7 @@
 
         <div class="w-full grid grid-cols-3 md:grid-cols-12 gap-4 ">
           <?php for ($i=1; $i < intval($row->room_desks) +1 ; $i++) : ?>
-          <a href="<?php echo 'desk_admin.php?room_id='. $row->id . '&desk_num=' . $i ?>" target="_blank" class="relative hover:bg-blue bg-gray text-blue h-12 w-24  hover:text-white text-center">
+          <a href="<?php echo 'desk_admin.php?room_id='. $row->id . '&desk_num=' . $i ?>" target='_blank' class="relative hover:bg-blue bg-gray text-blue h-12 w-24  hover:text-white text-center">
             <div class="absolute px-2 left-0 top-0  text-sm bg-blue text-white "> <?php echo $i ?></div> 
             <?php checkDesk($i, $escritorios); ?>
           </a>
